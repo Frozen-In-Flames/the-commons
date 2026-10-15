@@ -1,0 +1,19 @@
+{
+  "source": "nation grid registry",
+  "generators": [
+    {
+      "name": "Sunfield",
+      "fuel_type": "solar",
+      "capacity_mw": 120.0,
+      "status": "online",
+      "registered_at": "2026-10-15T20:07:15.859452+00:00"
+    },
+    {
+      "name": "Riverbend",
+      "fuel_type": "hydro",
+      "capacity_mw": 300.0,
+      "status": "maintenance",
+      "registered_at": "2026-10-15T20:07:15.909715+00:00"
+    }
+  ]
+}

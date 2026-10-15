@@ -1,0 +1,24 @@
+{
+  "source": "nation address registry",
+  "routes": [
+    {
+      "id": "R-shelbyville",
+      "locality": "Shelbyville",
+      "addresses": [
+        "B-1"
+      ],
+      "active": false,
+      "built_at": "2026-10-15T20:07:15.663507+00:00"
+    },
+    {
+      "id": "R-springfield",
+      "locality": "Springfield",
+      "addresses": [
+        "A-1",
+        "A-2"
+      ],
+      "active": true,
+      "built_at": "2026-10-15T20:07:15.663539+00:00"
+    }
+  ]
+}

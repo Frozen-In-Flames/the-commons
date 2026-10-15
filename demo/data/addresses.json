@@ -1,0 +1,23 @@
+{
+  "source": "nation address registry",
+  "addresses": [
+    {
+      "id": "A-1",
+      "locality": "Springfield",
+      "point_type": "residential",
+      "registered_at": "2026-10-15T20:07:15.513417+00:00"
+    },
+    {
+      "id": "A-2",
+      "locality": "Springfield",
+      "point_type": "business",
+      "registered_at": "2026-10-15T20:07:15.563318+00:00"
+    },
+    {
+      "id": "B-1",
+      "locality": "Shelbyville",
+      "point_type": "po_box",
+      "registered_at": "2026-10-15T20:07:15.613973+00:00"
+    }
+  ]
+}

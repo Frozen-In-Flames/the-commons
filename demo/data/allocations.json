@@ -1,0 +1,21 @@
+{
+  "source": "nation spectrum registry",
+  "allocations": [
+    {
+      "id": "A-1",
+      "band": "700 MHz",
+      "licensee": "Carrier One",
+      "purpose": "mobile",
+      "region": "North",
+      "allocated_at": "2026-10-15T20:07:16.150554+00:00"
+    },
+    {
+      "id": "A-3",
+      "band": "3.5 GHz",
+      "licensee": "Carrier Two",
+      "purpose": "fixed",
+      "region": "South",
+      "allocated_at": "2026-10-15T20:07:16.245059+00:00"
+    }
+  ]
+}

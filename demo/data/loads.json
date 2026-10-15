@@ -1,0 +1,9 @@
+{
+  "source": "nation grid registry",
+  "loads": [
+    {
+      "demand_mw": 380.0,
+      "observed_at": "2026-10-15T20:07:15.959789+00:00"
+    }
+  ]
+}
