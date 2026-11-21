@@ -109,3 +109,25 @@ python3 -m unittest discover -s tests
 33 tests, no network access. TRL 8: complete, tested, demonstrated,
 released. The gap to 9 is operational use by a real infrastructure
 authority.
+
+## Related work: procurement
+
+Generator and infrastructure records in this core describe plant a
+nation must procure: generators by fuel type and capacity in `Grid`,
+delivery capacity in `Post`. Vendor selection for that procurement
+is not recorded here. The family's procurement map of record is
+sp500-corporate-stack, which maps business capability requirements
+onto vendors with coverage stated exactly. Where a commons record
+names a need, the corresponding vendor mapping lives in that stack,
+by the same convention the-ledger records in its Related work
+section.
+
+## Shared alert convention
+
+This core follows the Nation Kit flag-and-alert convention shared
+with the other flagging cores: an alert is a record in the shape
+defined by `alerts.py` (deterministic `alert_id`, `source_core`,
+`kind`, `subject_id`, `severity`, `detail`, `action`, `status`,
+`recorded_at`), with `action` always `record-not-operate`. Alerts
+record a flagged condition for a human decision. They do not
+enforce, dispatch, or operate anything.

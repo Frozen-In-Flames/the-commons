@@ -27,6 +27,9 @@ def _utcnow():
     return datetime.datetime.now(datetime.timezone.utc).isoformat()
 
 
+from alerts import make_alert
+
+
 class Grid:
     """Grid status monitor: generators, load observations, readout."""
 
@@ -143,3 +146,19 @@ class Grid:
             status = "OK"
         return {"committed_mw": committed, "demand_mw": demand,
                 "margin_mw": margin, "status": status}
+
+    def alerts(self):
+        """Supply risk as shared alert records (see alerts.py).
+
+        Flag-and-alert only: a SHORTFALL or AT RISK readout is recorded
+        for a human decision. The grid does not shed load or dispatch
+        generation on the strength of an alert.
+        """
+        r = self.readout()
+        if r["status"] not in ("SHORTFALL", "AT RISK"):
+            return []
+        severity = "critical" if r["status"] == "SHORTFALL" else "high"
+        return [make_alert(
+            "the-commons", "grid_supply_risk", "grid", severity,
+            "grid status %s: demand %s MW against committed %s MW"
+            % (r["status"], r["demand_mw"], r["committed_mw"]))]

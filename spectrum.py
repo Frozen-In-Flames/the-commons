@@ -23,6 +23,9 @@ def _norm(s):
     return s.strip().lower()
 
 
+from alerts import make_alert
+
+
 class Spectrum:
     """Spectrum allocation registry with overlap detection."""
 
@@ -109,3 +112,19 @@ class Spectrum:
                     "licensees": sorted({a["licensee"] for a in allocs}),
                 })
         return hits
+
+    def alerts(self):
+        """Overlapping allocations as shared alert records (see alerts.py).
+
+        Flag-and-alert only: an overlap is recorded for a human
+        decision. No allocation is revoked or moved by an alert.
+        """
+        out = []
+        for hit in self.overlaps():
+            out.append(make_alert(
+                "the-commons", "spectrum_overlap",
+                "%s/%s" % (hit["band"], hit["region"]), "medium",
+                "allocations %s overlap in band %s, region %s"
+                % (", ".join(hit["allocations"]), hit["band"],
+                   hit["region"])))
+        return out
